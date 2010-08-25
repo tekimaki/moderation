@@ -52,13 +52,13 @@ $tables = array(
 	",
 	);
 
-global $gBitInstaller;
+global $gBitSystem;
 
 foreach( array_keys( $tables ) AS $tableName ) {
-	$gBitInstaller->registerSchemaTable( MODERATION_PKG_NAME, $tableName, $tables[$tableName] );
+	$gBitSystem->registerSchemaTable( MODERATION_PKG_NAME, $tableName, $tables[$tableName] );
 }
 
-$gBitInstaller->registerPackageInfo( MODERATION_PKG_NAME, array(
+$gBitSystem->registerPackageInfo( MODERATION_PKG_NAME, array(
 	'description' => "A Moderation service system that makes it easy for packages to provide moderation features.",
 	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
 ) );
@@ -68,16 +68,16 @@ $sequences = array (
 	'moderation_id_seq' => array( 'start' => 1 )
 );
 
-$gBitInstaller->registerSchemaSequences( MODERATION_PKG_NAME, $sequences );
+$gBitSystem->registerSchemaSequences( MODERATION_PKG_NAME, $sequences );
 
 // ### Default Preferences
-$gBitInstaller->registerPreferences( MODERATION_PKG_NAME, array(
+$gBitSystem->registerPreferences( MODERATION_PKG_NAME, array(
  //	array( MODERATION_PKG_NAME, 'moderation_display_request','y' ),
  //	array( MODERATION_PKG_NAME, 'moderation_display_reply','y' ),
 ) );
 
 /*
-$gBitInstaller->registerUserPermissions( MODERATION_PKG_NAME, array(
+$gBitSystem->registerUserPermissions( MODERATION_PKG_NAME, array(
 	array( 'p_moderation_admin', 'Can administer all aspects of moderation', 'editors', MODERATION_PKG_NAME ),
 ) );
 */
