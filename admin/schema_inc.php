@@ -88,4 +88,3 @@ $gBitInstaller->registerUserPermissions( MODERATION_PKG_NAME, array(
 */
 
 }
-
