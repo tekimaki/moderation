@@ -26,6 +26,18 @@
  * @package  moderation
  */
 
+global $gBitSystem;
+
+$gBitSystem->registerPackageInfo( MODERATION_PKG_NAME, array(
+	'description' => "A Moderation service system that makes it easy for packages to provide moderation features.",
+	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
+) );
+
+
+// Install process
+global $gBitInstaller;
+if( is_object( $gBitInstaller ) ){
+
 $tables = array(
 	'moderation' => "
     	moderation_id I4 PRIMARY,
@@ -52,16 +64,9 @@ $tables = array(
 	",
 	);
 
-global $gBitInstaller;
-
 foreach( array_keys( $tables ) AS $tableName ) {
 	$gBitInstaller->registerSchemaTable( MODERATION_PKG_NAME, $tableName, $tables[$tableName] );
 }
-
-$gBitInstaller->registerPackageInfo( MODERATION_PKG_NAME, array(
-	'description' => "A Moderation service system that makes it easy for packages to provide moderation features.",
-	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
-) );
 
 // ### Sequences
 $sequences = array (
@@ -82,4 +87,5 @@ $gBitInstaller->registerUserPermissions( MODERATION_PKG_NAME, array(
 ) );
 */
 
-?>
+}
+
