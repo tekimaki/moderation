@@ -43,7 +43,7 @@ $tables = array(
     	moderation_id I4 PRIMARY,
     	moderator_user_id I4,
     	moderator_group_id I4,
-		moderator_perm_name C(30),
+		moderator_perm_name C(128),
     	source_user_id I4 NOTNULL,
     	content_id I4,
 		responsible I1 NOTNULL DEFAULT 0,
