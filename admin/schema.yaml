@@ -36,4 +36,8 @@ moderation:
     it easy for packages to provide
     moderation features.
   license: 
-    html: '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>'
+    name: LGPL
+    description: >
+      Licensed under the GNU LESSER GENERAL
+      PUBLIC LICENSE.
+    url: http://www.gnu.org/copyleft/lesser.html
