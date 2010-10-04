@@ -1,0 +1,39 @@
+---
+moderation: 
+  homeable: false
+  required: false
+  tables: 
+    moderation: |
+      
+      moderation_id I4 PRIMARY,
+      moderator_user_id I4,
+      moderator_group_id I4,
+      moderator_perm_name C(128),
+      source_user_id I4 NOTNULL,
+      content_id I4,
+      responsible I1 NOTNULL DEFAULT 0,
+      package C(128) NOTNULL,
+      type C(64) NOTNULL,
+      status C(64) NOTNULL,
+      last_status C(64),
+      data X,
+      request X,
+      reply X
+      CONSTRAINT '
+      , CONSTRAINT `moderation_queue_mod_user_id` FOREIGN KEY (`moderator_user_id`) REFERENCES `users_users` (`user_id`)
+      , CONSTRAINT `moderation_queue_mod_group_id` FOREIGN KEY (`moderator_group_id`) REFERENCES `users_groups` (`group_id`)
+      , CONSTRAINT `moderation_queue_mod_perm_name` FOREIGN KEY (`moderator_perm_name`) REFERENCES `users_permissions` (`perm_name`)
+      , CONSTRAINT `moderation_queue_content_id` FOREIGN KEY (`content_id`) REFERENCES `liberty_content` (`content_id`)
+      , CONSTRAINT `moderation_queue_source_user_id` FOREIGN KEY (`source_user_id`) REFERENCES `users_users` (`user_id`)
+      '
+      
+  sequences: 
+    moderation_id_seq: 
+      start: 1
+  version: 0.0.1
+  description: >
+    A Moderation service system that makes
+    it easy for packages to provide
+    moderation features.
+  license: 
+    html: '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>'
