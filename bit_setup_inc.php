@@ -21,6 +21,7 @@ if( $gBitSystem->isPackageActive( 'moderation' ) ) {
 	);
 	$gBitSystem->registerAppMenu( $menuHash );
 
+	/*
 	$gLibertySystem->registerService(
 		MODERATION_PKG_NAME, MODERATION_PKG_NAME, array(
 		'module_display_function'  => 'moderation_module_display',
@@ -30,6 +31,7 @@ if( $gBitSystem->isPackageActive( 'moderation' ) ) {
 //	$gBitSystem->registerNotifyEvent( array( "moderation_request" => tra("A moderation request is made.") ) );
 //	$gBitSystem->registerNotifyEvent( array( "moderation_reply" => tra("A moderation reply is made.") ) );
 
+	 */
 	require_once( 'ModerationSystem.php' );
 }
 ?>
