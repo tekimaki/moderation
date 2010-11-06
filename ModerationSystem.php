@@ -597,6 +597,7 @@ class ModerationSystem extends LibertyContent {
 if ( empty( $gModerationSystem ) ) {
 	$gModerationSystem = new ModerationSystem();
 	// Store it in the context.
+	global $gBitSmarty;
 	$gBitSmarty->assign_by_ref('gModerationSystem', $gModerationSystem);
 }
 
