@@ -48,5 +48,4 @@ moderation:
       required: false
       api_handlers:
         function:
-          module_display: moderation_module_display
           content_expunge: moderation_content_expunge

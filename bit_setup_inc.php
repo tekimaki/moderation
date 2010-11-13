@@ -24,7 +24,6 @@ if( $gBitSystem->isPackageActive( 'moderation' ) ) {
 	/*
 	$gLibertySystem->registerService(
 		MODERATION_PKG_NAME, MODERATION_PKG_NAME, array(
-		'module_display_function'  => 'moderation_module_display',
 		'content_expunge_function'  => 'moderation_content_expunge',
 	) );
 
